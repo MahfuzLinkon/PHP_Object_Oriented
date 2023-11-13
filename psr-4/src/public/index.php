@@ -1,8 +1,15 @@
 <?php
 
-require_once '../PaymentGateway/Stripe/Transaction.php';
-require_once '../PaymentGateway/Paddle/Transaction.php';
-require_once '../PaymentGateway/Paddle/CustomerProfile.php';
+//spl_autoload_register(function ($class){
+//    $path = __DIR__ . '/../' . lcfirst(str_replace('\\', '/', $class)). '.php';
+//    require $path;
+//});
+require __DIR__ . '/../vendor/autoload.php';
 
-var_dump(new PaymentGateway\Paddle\Transaction());
+$id = new \Ramsey\Uuid\UuidFactory();
+echo $id->uuid4();
+
+var_dump(new App\PaymentGateway\Paddle\Transaction());
+
+
 
